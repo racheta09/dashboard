@@ -98,9 +98,9 @@ const Dashboard = () => {
         "0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c"
     )
 
-    const treasuryAddress = "0x510035F8298a4315Ab760095A4E5fFdF5e1E98d0"
-    const autoLiquidityAddress = "0x814264Bbc29791CFE7BE3a9C36Eb9Cc4f21aDB59"
-    const pairAddress = "0xf02ea163a546348f8A5df1b72acBB7Ea1711F039"
+    const treasuryAddress = "0xcC336eCa9110c46ec9890297d7335405C91d21De"
+    const autoLiquidityAddress = "0xa9494e3fF124B319D391AC5c2dC8c33820F0C69C"
+    const pairAddress = "0xa6c3950ff1b6fd0b10171be420deea5912284160"
     const wbnbbusdAddress = "0x58F876857a02D6762E0101bb5C46A8c1ED44Dc16"
     const deadAddress = "0x000000000000000000000000000000000000dEaD"
     const zeroAddress = "0x0000000000000000000000000000000000000000"
@@ -218,11 +218,10 @@ const Dashboard = () => {
                 bnbPrice
             ).toLocaleString("en-US")} BUSD`
             dData.burnedPercent.value = `${(
-                ((parseInt(w3data.deadBal) * 10 ** -5 +
-                    parseInt(w3data.zeroBal) * 10 ** -5) /
-                    parseInt(w3data.totalSupply)) *
-                100
-            ).toLocaleString("en-us")}%`
+                (parseInt(w3data.deadBal) +
+                    parseInt(w3data.zeroBal) ) /
+                    parseInt(w3data.totalSupply) * 100
+            ).toLocaleString("en-US")}%`
             dData.treasuryValue.value = `${(
                 parseInt(w3data.treasuryBalBnb) * 10 ** -18 * bnbPrice +
                 parseInt(w3data.treasuryBalBusd) * 10 ** -18
