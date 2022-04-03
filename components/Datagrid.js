@@ -5,7 +5,7 @@ const Datagrid = ({ title, value }) => {
   return (
     <Grid item xs={12} sm={6} md={4} lg={3} alignItems="center">
       <Paper
-        elevation={12}
+        elevation={24}
         alignItems="center"
         sx={{
           padding: "1rem",
