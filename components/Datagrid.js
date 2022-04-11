@@ -34,4 +34,5 @@ const Datagrid = ({ title, value }) => {
   )
 }
 
+
 export default Datagrid

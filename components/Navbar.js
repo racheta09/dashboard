@@ -75,8 +75,10 @@ export const Navbar = () => {
                             <Typography variant="subtitle1">
                                 {reward} BUSD
                             </Typography>
-                            <Button onClick={claim} variant="filled" size="big">
-                                Claim
+                            <Button onClick={claim} variant="filled" size="big" disabled={reward < 1}>
+                                {reward < 1 ?
+                                    <Typography color="error">Min. Claim 1 BUSD</Typography> :
+                                <Typography color="primary">Claim</Typography>}
                             </Button>
                         </>
                     ) : (
