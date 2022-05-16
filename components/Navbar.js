@@ -64,9 +64,20 @@ export const Navbar = () => {
     return (
         <AppBar position="static" color="transparent">
             <Toolbar>
-                <Image src="/CIP-3.0logo.png" alt="logo" width="286px" height="66px"/>
+                <a href="https://ciprotocol.finance">
+                    <Image
+                        src="/CIP-3.0logo.png"
+                        alt="logo"
+                        width="286px"
+                        height="66px"
+                    />
+                </a>
                 {/* <Image src="/faviconcip.png" alt="logo" width="100%" height="100%"/> */}
-                <Typography variant="h3" component="div" sx={{ flexGrow: 1, p:"10px" }}>
+                <Typography
+                    variant="h3"
+                    component="div"
+                    sx={{ flexGrow: 1, p: "10px" }}
+                >
                     Dashboard
                 </Typography>
                 {wallet ? (
@@ -75,10 +86,21 @@ export const Navbar = () => {
                             <Typography variant="subtitle1">
                                 {reward} BUSD
                             </Typography>
-                            <Button onClick={claim} variant="filled" size="big" disabled={reward < 1}>
-                                {reward < 1 ?
-                                    <Typography color="error">Min. Claim 1 BUSD</Typography> :
-                                <Typography color="primary">Claim</Typography>}
+                            <Button
+                                onClick={claim}
+                                variant="filled"
+                                size="big"
+                                disabled={reward < 1}
+                            >
+                                {reward < 1 ? (
+                                    <Typography color="error">
+                                        Min. Claim 1 BUSD
+                                    </Typography>
+                                ) : (
+                                    <Typography color="primary">
+                                        Claim
+                                    </Typography>
+                                )}
                             </Button>
                         </>
                     ) : (
